@@ -1,7 +1,7 @@
 {
-  "name": "jsonfile",
-  "version": "2.4.0",
-  "description": "Easily read/write JSON files.",
+  "name": "hjsonfile",
+  "version": "0.0.1",
+  "description": "Easily read/write HJSON files.",
   "repository": {
     "type": "git",
     "url": "git@github.com:jprichardson/node-jsonfile.git"
@@ -11,12 +11,19 @@
     "write",
     "file",
     "json",
+    "hjson",
     "fs",
     "fs-extra"
   ],
-  "author": "JP Richardson <jprichardson@gmail.com>",
+  "author": {
+    "email": "othree@gmail.com",
+    "name": "othree",
+    "url": "https://twitter.com/othree"
+  },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "hjson": "^2.4.1"
+  },
   "optionalDependencies": {
     "graceful-fs": "^4.1.6"
   },
