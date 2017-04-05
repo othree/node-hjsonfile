@@ -1,7 +1,7 @@
-Node.js - jsonfile
+Node.js - hjsonfile
 ================
 
-Easily read/write JSON files.
+Easily read/write HJSON files. Based on [jsonfile](https://www.npmjs.com/package/jsonfile)
 
 [![npm Package](https://img.shields.io/npm/v/jsonfile.svg?style=flat-square)](https://www.npmjs.org/package/jsonfile)
 [![build status](https://secure.travis-ci.org/jprichardson/node-jsonfile.svg)](http://travis-ci.org/jprichardson/node-jsonfile)
@@ -19,7 +19,7 @@ Writing `JSON.stringify()` and then `fs.writeFile()` and `JSON.parse()` with `fs
 Installation
 ------------
 
-    npm install --save jsonfile
+    npm install --save hjsonfile
 
 
 
@@ -34,7 +34,7 @@ API
 
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 var file = '/tmp/data.json'
 jsonfile.readFile(file, function(err, obj) {
   console.dir(obj)
@@ -49,7 +49,7 @@ jsonfile.readFile(file, function(err, obj) {
 If `false`, returns `null` for the object.
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 var file = '/tmp/data.json'
 
 console.dir(jsonfile.readFileSync(file))
@@ -62,7 +62,7 @@ console.dir(jsonfile.readFileSync(file))
 
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/data.json'
 var obj = {name: 'JP'}
@@ -75,7 +75,7 @@ jsonfile.writeFile(file, obj, function (err) {
 **formatting with spaces:**
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/data.json'
 var obj = {name: 'JP'}
@@ -90,7 +90,7 @@ jsonfile.writeFile(file, obj, {spaces: 2}, function(err) {
 You can use `fs.writeFile` option `{flag: 'a'}` to achieve this.
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/mayAlreadyExistedData.json'
 var obj = {name: 'JP'}
@@ -105,7 +105,7 @@ jsonfile.writeFile(file, obj, {flag: 'a'}, function (err) {
 `options`: Pass in any `fs.writeFileSync` options or set `replacer` for a [JSON replacer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify). Can also pass in `spaces`.
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/data.json'
 var obj = {name: 'JP'}
@@ -116,7 +116,7 @@ jsonfile.writeFileSync(file, obj)
 **formatting with spaces:**
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/data.json'
 var obj = {name: 'JP'}
@@ -129,7 +129,7 @@ jsonfile.writeFileSync(file, obj, {spaces: 2})
 You can use `fs.writeFileSync` option `{flag: 'a'}` to achieve this.
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 var file = '/tmp/mayAlreadyExistedData.json'
 var obj = {name: 'JP'}
@@ -144,7 +144,7 @@ Global configuration to set spaces to indent JSON files.
 **default:** `null`
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 
 jsonfile.spaces = 4
 
@@ -168,7 +168,7 @@ myObj.writeJsonSync = jsonfile.writeFileSync
 Could do the following:
 
 ```js
-var jsonfile = require('jsonfile')
+var jsonfile = require('hjsonfile')
 jsonfile.spaces = 4
 jsonfile.writeFileSync(file, obj) // will have 4 spaces indentation
 
@@ -178,10 +178,3 @@ myCrazyObj.writeJsonSync(file, obj) // will have 32 space indentation
 myCrazyObj.writeJsonSync(file, obj, {spaces: 2}) // will have only 2
 ```
 
-
-License
--------
-
-(MIT License)
-
-Copyright 2012-2016, JP Richardson  <jprichardson@gmail.com>
