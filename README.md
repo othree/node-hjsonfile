@@ -1,9 +1,11 @@
 Node.js - hjsonfile
 ================
 
-Easily read/write HJSON files. Based on [jsonfile](https://www.npmjs.com/package/jsonfile)
+Easily read/write HJSON files. Based on [jsonfile](https://www.npmjs.com/package/jsonfile).  
+Early release. Options object is not serialized for hjson. Document is not update yet.
 
 <a href="https://github.com/feross/standard"><img src="https://cdn.rawgit.com/feross/standard/master/sticker.svg" alt="Standard JavaScript" width="100"></a>
+
 
 Why?
 ----

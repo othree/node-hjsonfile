@@ -1,6 +1,6 @@
 {
   "name": "hjsonfile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Easily read/write HJSON files.",
   "repository": {
     "type": "git",
