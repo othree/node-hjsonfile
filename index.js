@@ -35,7 +35,7 @@ function readFile (file, options, callback) {
 
     var obj
     try {
-      obj = hjson.parse(data, options ? options.reviver : null)
+      obj = hjson.parse(data, options)
     } catch (err2) {
       if (shouldThrow) {
         err2.message = file + ': ' + err2.message
@@ -69,7 +69,7 @@ function readFileSync (file, options) {
   content = stripBom(content)
 
   try {
-    return  hjson.parse(content, options.reviver)
+    return hjson.parse(content, options)
   } catch (err) {
     if (shouldThrow) {
       err.message = file + ': ' + err.message
@@ -88,14 +88,16 @@ function writeFile (file, obj, options, callback) {
   options = options || {}
   var fs = options.fs || _fs
 
-  var spaces = typeof options === 'object' && options !== null
-    ? 'spaces' in options
-    ? options.spaces : this.spaces
-    : this.spaces
+  var space = typeof options === 'object' && options !== null
+    ? 'space' in options
+    ? options.space : this.space
+    : this.space
+
+  options.space = space
 
   var str = ''
   try {
-    str = hjson.stringify(obj, options ? options.replacer : null, spaces) + '\n'
+    str = hjson.stringify(obj, options) + '\n'
   } catch (err) {
     if (callback) return callback(err, null)
   }
@@ -107,12 +109,14 @@ function writeFileSync (file, obj, options) {
   options = options || {}
   var fs = options.fs || _fs
 
-  var spaces = typeof options === 'object' && options !== null
-    ? 'spaces' in options
-    ? options.spaces : this.spaces
-    : this.spaces
+  var space = typeof options === 'object' && options !== null
+    ? 'space' in options
+    ? options.space : this.space
+    : this.space
 
-  var str = hjson.stringify(obj, options.replacer, spaces) + '\n'
+  options.space = space
+
+  var str = hjson.stringify(obj, options) + '\n'
   // not sure if fs.writeFileSync returns anything, but just in case
   return fs.writeFileSync(file, str, options)
 }
