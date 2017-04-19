@@ -1,10 +1,10 @@
 {
   "name": "hjsonfile",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Easily read/write HJSON files.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jprichardson/node-jsonfile.git"
+    "url": "https://github.com/othree/node-hjsonfile.git"
   },
   "keywords": [
     "read",
