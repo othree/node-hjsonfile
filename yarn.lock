@@ -487,9 +487,9 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
-hjson@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/hjson/-/hjson-2.4.1.tgz#b394035e9c69c4fce16394609d34e082107527f7"
+hjson@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/hjson/-/hjson-3.1.1.tgz#eaab95eebc6c0c749442219a817d9b4ff0070dd2"
 
 ignore@^2.2.19:
   version "2.2.19"
